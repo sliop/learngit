@@ -1,0 +1,13 @@
+git config --global user.name "Your name" 
+git config --global user.email "email@example.com"
+git add <file> 					#添加文件到仓库
+git commit -m <message> 		#提交文件到仓库
+mkdir <file>  			 	    #新建文件夹
+cd <file name">    		 	    #进入文件夹
+git init						#创建git仓库
+git status						#查看仓库当前状态
+git diff <file>					#查看文件变化
+git log							#显示从最近到最远的提交日志
+git log --pretty=oneline		#用一行来显示从最近到最远的提交日志
+git reset --hard <版本号>		#会退到指定版本，版本号可以是Commit ID，也可以用"HEAD"表示当前版本，"HEAD^"表示上一版本，"HEAD^^"表示上两个版本,"HEAD~N"表示上N个版本
+git reflog						#查看命令历史
