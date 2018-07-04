@@ -33,3 +33,4 @@ git stash pop													#回到工作现场并删除stashneirong
 git stash apply stash@{N}										#恢复到指定的stash N
 git stash list													#查看stash内容
 git stash drop     												#删除stash内容
+git branch -D <name>											#强行删除一个没有被合并过的分支
