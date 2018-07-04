@@ -20,3 +20,9 @@ git remote add origin https://server-name/path/repo-name.git	#关联远程库
 git push -u origin master										#第一次推送master分支的所有内容
 git push origin master											#推送master分支的修改
 git clone git@server-name:path/repo-name.git					#克隆远程库
+git branch														#查看分支
+git branch <name>												#创建分支
+git checkout <name>												#切换分支
+git checkout -b <name>											#创建并切换分支
+git merge <name>												#合并某分支到当前分支
+git branch -d <name>											#删除分支
