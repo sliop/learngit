@@ -28,3 +28,8 @@ git merge <name>												#合并某分支到当前分支
 git branch -d <name>											#删除分支
 git log --graph --pretty=oneline --abbrev-commit				#可以查看分支合并图
 git merge --no-ff -m 'message' <name>							#用普通模式合并分支，合并后的历史有分支
+git stash														#暂时储存工作现场
+git stash pop													#回到工作现场并删除stashneirong
+git stash apply stash@{N}										#恢复到指定的stash N
+git stash list													#查看stash内容
+git stash drop     												#删除stash内容
