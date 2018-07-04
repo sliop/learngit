@@ -13,3 +13,4 @@ git reset --hard <版本号>		#会退到指定版本，版本号可以是Commit 
 git reflog						#查看命令历史
 git checkout -- <file>			#丢弃工作区的修改
 git reset HEAD <file>			#丢弃暂存区的修改，工作区的修改仍然不变，还需上一步命令来丢弃工作区修改
+git rm <file>					#用于删除文件
