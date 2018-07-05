@@ -49,3 +49,4 @@ git push origin <tagname>										#推送本地标签
 git push origin --tags											#推送全部未推送过的本地标签
 git tag -d <tagname>											#删除本地标签
 git push origin :refs/tags/<tagname>							#删除远程标签
+git config --global alias.<别名> <想取代的命令>					#可以给Git命令配置别名
