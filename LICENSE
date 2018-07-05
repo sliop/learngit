@@ -35,3 +35,8 @@ git stash apply stash@{N}										#恢复到指定的stash N
 git stash list													#查看stash内容
 git stash drop     												#删除stash内容
 git branch -D <name>											#强行删除一个没有被合并过的分支
+git remote -v													#查看远程库信息
+git push origin <name>											#从本地推送分支
+git pull														#抓取远程的新提交
+git checkout -b <name> origin/<name>							#在本地创建和远程分支对应的分支,本地和远程分支的名字最好一致
+git branch --set-upstream <name> origin/<name>					#建立本地分支与远程分支的关联
