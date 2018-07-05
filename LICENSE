@@ -22,21 +22,30 @@ git push -u origin master										#第一次推送master分支的所有内容�
 git push origin master											#推送master分支的修改
 git clone git@server-name:path/repo-name.git					#克隆远程库
 git branch														#查看分支
-git branch <name>												#创建分支
-git checkout <name>												#切换分支
-git checkout -b <name>											#创建并切换分支
-git merge <name>												#合并某分支到当前分支
-git branch -d <name>											#删除分支
+git branch <branchname>											#创建分支
+git checkout <branchname>										#切换分支
+git checkout -b <branchname>									#创建并切换分支
+git merge <branchname>											#合并某分支到当前分支
+git branch -d <branchname>										#删除分支
 git log --graph --pretty=oneline --abbrev-commit				#可以查看分支合并图
-git merge --no-ff -m 'message' <name>							#用普通模式合并分支，合并后的历史有分支
+git merge --no-ff -m 'message' <branchname>						#用普通模式合并分支，合并后的历史有分支
 git stash														#暂时储存工作现场
 git stash pop													#回到工作现场并删除stashneirong
 git stash apply stash@{N}										#恢复到指定的stash N
 git stash list													#查看stash内容
 git stash drop     												#删除stash内容
-git branch -D <name>											#强行删除一个没有被合并过的分支
+git branch -D <branchname>										#强行删除一个没有被合并过的分支
 git remote -v													#查看远程库信息
-git push origin <name>											#从本地推送分支
+git push origin <branchname>									#从本地推送分支
 git pull														#抓取远程的新提交
-git checkout -b <name> origin/<name>							#在本地创建和远程分支对应的分支,本地和远程分支的名字最好一致
-git branch --set-upstream <name> origin/<name>					#建立本地分支与远程分支的关联
+git checkout -b <branchname> origin/<branchname>				#在本地创建和远程分支对应的分支,本地和远程分支的名字最好一致
+git branch --set-upstream <branchname> origin/<branchname>		#建立本地分支与远程分支的关联
+git tag <tagname>
+git tag <tagname> <Commit ID>									#新建一个标签，默认为HEAD，也可指定Commit ID
+git tag															#查看所有标签
+git tag -a <tagname> -m 'message'								#可指定标签信息
+git show <tagname>												#可看到说明文字
+git push origin <tagname>										#推送本地标签
+git push origin --tags											#推送全部未推送过的本地标签
+git tag -d <tagname>											#删除本地标签
+git push origin :refs/tags/<tagname>							#删除远程标签
