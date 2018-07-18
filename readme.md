@@ -280,7 +280,7 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
 ## Git分支 ##
 
-复制提交到当前所在的位置（HEAD):
+复制提交到当前所在的位置（`HEAD`):
 
 	git cherry-pick <Commit ID>
 
@@ -309,13 +309,14 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
     git describe <ref>
 
-`<ref>`可以是任何能被Git识别成提交记录的引用，如果你没有指定的话，Git会以你目前所检出的位置（HEAD）。
+`<ref>`可以是任何能被Git识别成提交记录的引用，如果你没有指定的话，Git会以你目前所检出的位置（`HEAD`）。
 
 它输出的结果是这样的：
 
     <tag>_<numCommits>_g<hash>
 
-tag表示的是离ref最近的标签，numCommits是表示这个ref与tag相差有多少个提交记录，hash表示的是你所给定的ref所表示的提交记录哈希值的前几位。
+
+`tag`表示的是离ref最近的标签，`numCommits`是表示这个`ref`与`tag`相差有多少个提交记录，`hash`表示的是你所给定的`ref`所表示的提交记录哈希值的前几位。
 
 当ref提交记录上有某个标签时，则只输出标签名称。
 
