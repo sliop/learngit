@@ -56,7 +56,8 @@
 
 	git reset --hard <Commit ID>
 
-**也可用"HEAD"表示当前版本，"HEAD^"表示上一版本，"HEAD^^"表示上两个版本,"HEAD~N"表示上N个版本**
+
+> 也可用"HEAD"表示当前版本，"HEAD^"表示上一版本，"HEAD^^"表示上两个版本,"HEAD~N"表示上N个版本。
 
 查看命令历史：
 
@@ -86,13 +87,13 @@
 
     git remote add origin https://server-name/path/repo-name.git
 
-**Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快,其中origin是远程库的名字**
+> Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快,其中origin是远程库的名字。
 
 删除已关联的远程库：
 
     git remote rm origin
 
-**其中origin为远程库的名字**
+> 其中origin为远程库的名字。
 
 第一次推送master分支的所有内容并将远程与本地分支关联：
 
@@ -190,7 +191,7 @@
 
 	git tag <tagname> <Commit ID>
 
-**如果不输入Commit ID,则默认为HEAD。**
+> 如果不输入Commit ID,则默认为HEAD。
 
 指定标签信息：
 
@@ -237,11 +238,11 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
 	git config --global alias.<别名> <想取代的命令>
 
-如用`st`就表示`status`：
+如过想用`st`表示`status`：
 
 	git config --global alias.st status
 
-**配置Git的时候，加上--global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。**
+> 配置Git的时候，加上--global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
 
 每个仓库的Git配置文件都放在`.git/config`文件中：
 
@@ -262,11 +263,11 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
     [alias]
     	last = log -1
 
-别名就在`[alias]`后面，要删除别名，直接把对应的行删掉即可。
+> 别名就在`[alias]`后面，要删除别名，直接把对应的行删掉即可。
 
-而当前用户的Git配置文件放在用户主目录下的一个隐藏文件`.gitconfig`中：
+> 而当前用户的Git配置文件放在用户主目录下的一个隐藏文件`.gitconfig`中：
 
-	$ cat .gitconfig
+> 	$ cat .gitconfig
 	[alias]
     	co = checkout
     	ci = commit
@@ -276,7 +277,7 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
     	name = Your Name
     	email = your@email.com
 
-配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。
+> 配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置。
 
 ## Git分支 ##
 
@@ -288,36 +289,83 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
 	git rebase <branchname1> <branchname2>
 
-**如果省略`<branchname2>`则表示合并当前分支到分支1。**
+> 如果省略`<branchname2>`则表示合并当前分支到分支1。
 
 交互式rebase:
 
 	git rebase -i <Commit ID>
 
-当 rebase UI界面打开时, 你能做3件事:
+> 当 rebase UI界面打开时, 你能做3件事:
 
-- 调整提交记录的顺序（通过鼠标拖放来完成）
+> - 调整提交记录的顺序（通过鼠标拖放来完成）
 
+> - 删除你不想要的提交（通过切换 pick 的状态来完成，关闭就意味着你不想要这个提交记录）
 
-- 删除你不想要的提交（通过切换 pick 的状态来完成，关闭就意味着你不想要这个提交记录）
-
-
-- 合并提交。 遗憾的是由于某种逻辑的原因，我们的课程不支持此功能，因此我不会详细介绍这个操作。简而言之，它允许你把多个提交记录合并成一个。
-
+> - 合并提交。 遗憾的是由于某种逻辑的原因，我们的课程不支持此功能，因此我不会详细介绍这个操作。简而言之，它允许你把多个提交记录合并成一个。
 
 `git describe`的​​语法是：
 
     git describe <ref>
 
-`<ref>`可以是任何能被Git识别成提交记录的引用，如果你没有指定的话，Git会以你目前所检出的位置（`HEAD`）。
+> `<ref>`可以是任何能被Git识别成提交记录的引用，如果你没有指定的话，Git会以你目前所检出的位置（`HEAD`）。
 
-它输出的结果是这样的：
+> 它输出的结果是这样的：
 
-    <tag>_<numCommits>_g<hash>
+>     <tag>_<numCommits>_g<hash>
+
+> `tag`表示的是离ref最近的标签，`numCommits`是表示这个`ref`与`tag`相差有多少个提交记录，`hash`表示的是你所给定的`ref`所表示的提交记录哈希值的前几位。
+
+> 当ref提交记录上有某个标签时，则只输出标签名称。
+
+拉取远程提交并rebase:
+
+	git pull --rebase
+
+创建一个新分支1并跟踪远程分支2
+
+	git checkout -b <branchname1> <remote/branchname2>
+
+分支1跟踪远程分支2
+
+	git branch -u <remote/branchname2> <branchname1>
 
 
-`tag`表示的是离ref最近的标签，`numCommits`是表示这个`ref`与`tag`相差有多少个提交记录，`hash`表示的是你所给定的`ref`所表示的提交记录哈希值的前几位。
 
-当ref提交记录上有某个标签时，则只输出标签名称。
+> 如果省略`<branchname1>`，则表示当前分支跟踪远程分支2。
+
+**指定`git push`参数**
+
+将指定的本地分支推送到远程库：
+
+	git push <remote> <place>
+
+将本地的某分支推送到远程库的某分支：
+
+	git push <remote> <source>:<destination>
+
+
+
+> 其中remote是远程库的名字如origin，source是Git能识别的位置如分支foo或者是HEAD^，destination是远程库中分支的名称，如果指定的分支不存在，将在远程创建该分支。 
+
+
+
+> `git fetch`同理。当push指定的source为空时，会删除远程仓库中的分支，而当fetch指定的source为空时，将在本地创建该分支。
+
+
+
+> 而对于
+
+
+
+> 	git pull <remote> <source>:<destination>
+
+
+
+> 其等效于
+
+
+
+> 	git fetch <remote> <source>:<destination>
+	git merge <destination>
 
 # HTML #
