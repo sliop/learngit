@@ -77,7 +77,9 @@
 
 创建SSH Key：
 
-	git ssh-keyge -t rsa -C "email@example.com"
+	ssh-keygen -t rsa -C "email@example.com"
+
+> 并不是Git命令，用命令提示行运行。
 
 关联远程库：
 
