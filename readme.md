@@ -393,7 +393,17 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
 图片标签：
 
-	<img></img>
+	<img src="图片地址" alt="下载失败时的替换文本" title="提示文本" />
+
+> 讲解：
+
+> 1. src：标识图像的位置；
+
+> 2. alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；
+
+> 3. title：提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；
+
+> 4. 图像可以是GIF，PNG，JPEG格式的图像文件。
 
 head标签：
 
@@ -546,6 +556,183 @@ head标签：
 
 > 用以描述表格内容，标题的显示位置：表格上方。
 
+超链接标签：
+
+	<a href="网址" title="鼠标滑过现实的文本">链接显示的文本</a>
+
+> title属性会让鼠标滑过链接文字时会显示这个属性的文本内容。这个属性在实际网页开发中作用很大，主要方便搜索引擎了解链接地址的内容（语义化更友好）。
+
+> `<a>`标签在默认情况下，链接的网页是在当前浏览器窗口中打开，有时需要在新的标签页中打开。
+
+> 代码实现如下：
+
+>     
+     <a href="目标网址" target="_blank">链接现实的文本</a>
+
+> `<a>`标签还可以链接E-mail地址，使用mailto能让访问者便捷向网站管理者发送电子邮件。
+
+> 代码实现如下：
+
+> 
+    <a href="mailto:example1@emali.com;example2@emali.com?cc=example3@emali.com&bcc=example4@emali.com&subject=主题&body=内容">邮件显示文本</a>
+
+> **注意：**如果mailto后面同时有多个参数的话，第一个参数必须以“?”开头，后面的参数每一个都以“&”分隔，cc代表抄送，bcc表示密件抄送，subject为邮件主题，body为邮件内容，发送邮件可选多个地址，每个地址之间用`;`隔开。
+
+表单标签：
+
+	<form method="传送方式" action="服务器文件"></form>
+
+> 表单可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。
+
+> 讲解：
+
+> 1. `<form>`:`<form>`标签是成对出现的，以`<form>`开始，以`</form>`结束。
+
+> 2. action：浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。
+
+> 3. method：数据传送的方式（get/post）。
+
+> 示例：
+
+> 
+	<form    method="post"    action="save.php">
+		<label for="username">用户名:</label>
+        <input type="text" name="username" />
+        <label for="pass">密码:</label>
+        <input type="password" name="pass" />
+	</form>
+
+> **注意:**
+
+> **1. 所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 `<form>``</form>` 标签之间（否则用户输入的信息可提交不到服务器上哦！）。**
+
+> **2. method : post/get 的区别这一部分内容属于后端程序员考虑的问题。**
+
+文本、密码输入框：
+
+	<form>
+		<input type="text/password" name="名称" value="文本" />
+	</form>
+
+> 文本输入框可以让用户在表单键入字母、数字等内容，文本输入框也可以转化为密码输入框。
+
+> 1. type：
+
+> > 当type="text"时，输入框为文本输入框;
+
+> > 当type="password"时, 输入框为密码输入框。
+
+> 2. name：为文本框命名，以备后台程序ASP 、PHP使用。
+
+> 3. value：为文本输入框设置默认值。(一般起到提示作用)
+
+> 示例：
+
+> 
+	<form>
+  	姓名：
+  	<input type="text" name="myName" />
+  	<br />
+  	密码：
+  	<input type="password" name="pass" />
+	</form>
+
+文本域：
+
+	<textarea rows="行数" cols="列数">文本</textarea>
+
+> 1. `<textarea>`标签是成对出现的，以`<textarea>`开始，以`</textarea>`结束。
+
+> 2. **cols**:多行输入域的**列数**。
+
+> 3. **rows**：多行输入域的**行数**。
+
+> 4. 在`<textarea>``</textarea>`标签之间可以输入**默认值**。
+
+> 举例：
+
+> 
+	<form method="post" action="save.php">
+		<label>联系我们</label>
+		<textarea cols="50" rows:"10">在这里输入内容...</textarea>
+	</form>
+
+单选框、复选框：
+	
+	<input type="radio/checkbox" value="值" name="名称" checked="checked" />
+
+> 1. type:
+
+> > 当 type="radio" 时，控件为单选框。
+
+> > 当 type="checkbox" 时，控件为复选框。
+
+> 2. value：提交数据到服务器的值(后台程序PHP使用）。
+
+> 3. name：为控件命名，以备后台程序 ASP、PHP使用。
+
+> 4. checked：当设置 checked="checked" 时，该选项被默认选中。
+
+> **注意:**同一组的单选按钮，name取值一定要一致，比如上面例子为同一个名称“radioLove”，这样同一组的单选按钮才可以起到单选的作用。
+
+下拉列表：
+
+	<select>
+		<option value="提交值">选项</option>
+		<option value="提交值">选项</option>
+		<option value="提交值">选项</option>
+	</select>
+
+> 1. **value**：提交值指向服务器提交的值；选项指显示的值。
+
+> 2. **selected="selected"**:设置**selected="selected"**属性，则该选项就被默认选中。
+
+>在`<select>`标签中设置multiple="multiple"属性，可以实现多选功能，在 windows 操作系统下，进行多选时按下Ctrl键同时进行单击（在 Mac下使用 Command +单击），可以选择多个选项。代码如下：
+
+>
+	<select multiple="multiple">
+		<option value="提交值">选项</option>
+		<option value="提交值">选项</option>
+		<option value="提交值">选项</option>
+	</select>
+
+提交按钮：
+
+	<input type="submit" value="提交">
+
+> type:**只有当type值设置为submit时，按钮才有提交作用。**
+
+> value: 按钮上显示的文字。
+
+重置按钮:
+
+	<input type="reset" value="重置">
+
+> type:**只有当type值设置为reset时，按钮才有重置作用。**
+
+> value:按钮上显示的文字。
+
+label标签：
+
+	<label for="控件id名称">
+
+> 作用：label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。
+
+> **注意**：标签的 for 属性中的值应当与相关控件的 id 属性值一定要相同。
+
+> 举例：
+
+> 
+	<form>
+		<label for="male">男</label>
+		<input type="ratio" name="gender" id="male" />
+		<br />
+		<label for="female">女</label>
+		<input type="ration" name="gender" id="female" />
+		<label for="email">输入你的邮箱地址</label>
+		<input type="email" id="email" placeholder="Enter eamil">
+	</form>
+
 ### html文件基本结构 ###
 
 HTML文件是有自己固定的结构的。
@@ -580,6 +767,6 @@ HTML文件是有自己固定的结构的。
 	table tr td,th{border:1px solid #000;}
 	</style>
 
-> 作用为为th，td单元格添加粗细为一个像素的黑色边框。
+> 效果为为th，td单元格添加粗细为一个像素的黑色边框。
 
 
