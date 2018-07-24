@@ -350,9 +350,11 @@ Git会告诉我们，`.gitignore`的第3行规则忽略了该文件，于是我�
 
 > 而对于
 
-> 	git pull <remote> <source>:<destination>
+> 	
+	git pull <remote> <source>:<destination>
 
 > 其等效于
 
-> 	git fetch <remote> <source>:<destination>
+> 	
+	git fetch <remote> <source>:<destination>
 	git merge <destination>
