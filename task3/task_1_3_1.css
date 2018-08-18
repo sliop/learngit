@@ -1,0 +1,43 @@
+div {
+	margin: 20px;
+	padding: 20px;
+}
+.main {
+	background-color: #eee;
+	border:2px solid #999;
+	overflow: auto;
+}
+.left {
+	margin-left: 0;
+	float: left;
+	width: 160px;
+	background-color: white;
+	border:2px solid #999;
+}
+.left > img {
+	margin: 20px 20px 20px 0;
+	float: left;
+	width: 80px;
+	height: 80px;
+}
+.right{
+	margin-right: 0;
+	float: right;
+	width:80px;
+	background-color: white;
+	border:2px solid #999;
+}
+.right > img {
+	margin: 20px 0;
+	width: 80px;
+	height: 80px;
+}
+.middle{
+	margin-left: 224px;
+	margin-right: 144px;
+	background-color: white;
+	border:2px solid #999;
+}
+.middle > p{
+	text-indent: 2em;
+}
