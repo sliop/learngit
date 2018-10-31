@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-div {
+.box {
     width: 400px;
     height: 200px;
     background-color: #ccc;
@@ -11,4 +11,19 @@ div {
     left: 50%;
     margin-top: -100px;
     margin-left: -200px;
+}
+.circle1,
+.circle2 {
+    width: 50px;
+    height: 50px;
+}
+.circle1 {
+    position: relative;
+    background:radial-gradient(100px at left top,#fc0 50%,transparent 50%);
+}
+.circle2 {
+    position: relative;
+    bottom: -100px;
+    left: 350px;
+    background:radial-gradient(100px at right bottom,#fc0 50%,transparent 50%);
 }
