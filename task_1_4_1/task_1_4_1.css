@@ -12,16 +12,16 @@
     margin-top: -100px;
     margin-left: -200px;
 }
-.circle1,
-.circle2 {
+.TL,
+.BR {
     width: 50px;
     height: 50px;
 }
-.circle1 {
+.TL {
     position: relative;
     background:radial-gradient(100px at left top,#fc0 50%,transparent 50%);
 }
-.circle2 {
+.BR {
     position: relative;
     bottom: -100px;
     left: 350px;
