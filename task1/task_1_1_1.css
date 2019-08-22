@@ -1,134 +1,139 @@
-*{
+* {
 	margin:0;
 	padding: 0;
 }
-body{
+body {
 	background-color: #ccc; 
 }
-.header-nav{
+.header-nav {
 	background-color: black;
 	height: 60px;
 	line-height: 60px;
 	width:100%;
 }
-.header-logo{
+.header-logo {
 	display: inline-block;
 	position: relative;
 	top: 15px;
 	left: 100px;
 	background-color: unset;
 }
-.header-nav ul{	
+.header-nav ul {	
 	float: right;
 	vertical-align: middle;
 }
-.header-nav li{
+.header-nav li {
 	display: inline;
 	float: left;
 }
-.header-nav a{
+.header-nav a {
 	display: block;
 	width: 120px;
 	color: white;
 	text-decoration: none;
 }
-.article,.picture,.form{
+.article,
+.picture,
+.form {
 	background-color: white;
 	padding: 50px;
 	margin: 20px 50px;
 	border-style: outset;
 }
-.article p{
+.article p {
 	text-indent: 2em;
 }
-h2{
+h2 {
 	font-size: 200%;
 	line-height: 2;
 }
-h3{
+h3 { 
 	line-height: 2;
 	font-size: 150%;
 	color: grey;
 }
-h4{
+h4 {
 	line-height: 2;
 	font-size: 100%;
 	font-weight: normal;
 	color: grey;
 }
-ul{
+ul {
 	list-style-type: none; 
 }
-.picture div{
+.picture div {
 	border: 1px solid #bebebe;
 	width: 100px;
 	margin: 20px;
 	padding: 10px;
 }
-.picture p{
+.picture p {
 	text-align: center;
 	line-height: 300%;
 }
-.picture img{
+.picture img {
 	width: 100px;
 	height: 80px;
 }
-.article ol{
+.article ol {
 	padding: 0 2em;
 }
-.article ul{
+.article ul {
 	padding: 0 2em;
 }
-.article>ol>li{
+.article>ol>li {
 	list-style-position: inside;
 	line-height: 1.5;
 	font-weight: bold;
 }
-table{
+table {
 	border-collapse: collapse;
 	width: 100%;
 }
-table,th,td{
+table,
+th,
+td {
 	border: 1px solid grey;
 	text-align: left;
 }
-th{
+th {
 	background-color: black;
 	color:white;
 }
-.grey{
+.grey {
 	background-color: grey;
 }
-.form1{
+.form1 {
 	position: relative;
 	left:35%;
+	/* text-align: center; */
 	padding-bottom: 1em;
 }
-.form h2{
+.form h2 {
 	font-size: 150%;
 	border-left: 4px solid #ccc;
 	padding-left: 0.5em;
 }
-form .right{
+form .right {
 	width: 8em;
 }
-.instruction{
+.instruction {
 	text-indent: 8em;
 	color:#ccc;
 }
-form label{
+form label {
 	display: inline-block;
 	text-align: right;
 }
-.form p{
+.form p {
 	line-height: 200%;
 }
-textarea{
+textarea {
 	width: 50%;
 	height: 10em;
 	vertical-align: top;
 }
-.submit{
+.submit {
 	width:100%;
 	height:40px;
 	background-color: #36f;
